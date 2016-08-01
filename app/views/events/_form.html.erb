@@ -1,0 +1,57 @@
+<%= form_for(@event) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <label><%= f.label :picture, class: 'col-sm-2 control-label' %></label>
+    <%= f.file_field :picture, class: 'form-control' %>
+  </div>
+
+  <div class="field form-group">
+     <label><%= f.label :company, class: 'col-sm-2 control-label' %></label>
+  <div class="col sm-6">
+    <%= f.text_field :company, class: 'form-control' %>
+  </div>
+
+  <div class="field form-group">
+    <label><%= f.label :university, class: 'col-sm-2 control-label' %></label>
+  <div class="col sm-6">
+    <%= f.text_field :university, class: 'form-control' %>
+  </div>
+
+  <div class="field form-group">
+  <label><%= f.label :description, class: 'col-sm-2 control-label' %></label>
+  <div class="col sm-6">
+    <%= f.text_area :description, class: 'form-control' %>
+  </div>
+  
+ <div class="field form-group">
+    <label><%= f.label :place, class: 'col-sm-2 control-label' %></label>
+  <div class="col sm-6">
+    <%= f.text_field :place, class: 'form-control' %>
+  </div>
+  
+  <div class="field form-group">
+    <label><%= f.label :date, class: 'col-sm-2 control-label' %></label>
+      <%= f.date_select :date, class: 'form-control' %>
+  </div>
+   
+  <div class="field form-group">
+    <label><%= f.label :time, class: 'col-sm-2 control-label' %></label>
+    <%= f.time_select :time, class: 'form-control' %>
+  
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
