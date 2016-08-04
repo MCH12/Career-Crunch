@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
+  resources :applications
+  resources :companies
+  get 'static_pages/home'
+  get 'static_pages/help'
+  get 'static_pages/calendar'
+  get 'static_pages/prep'
+
+  resources :universities
   devise_for :users
   resources :events
-root :to => redirect('/events')
+  root 'static_pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

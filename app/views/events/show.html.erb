@@ -1,11 +1,18 @@
-<div class="row">
-  <div class="col-md-9">
+
+  <div class="row">
+  <div class="col-md-3">
     <%= image_tag(@event.picture_url, width: '100%') if @event.picture.present? %>
   </div>
 
   <div class="col-md-3">
     <p><b>Name: </b><%= @event.name %></p>
+    <p><b>Company: </b><%= @event.company %></p>
+    <p><b>Industry: </b><%= @event.industry %></p>
+    <p><b>University: </b><%= @event.university %></p>
     <p><b>Description: </b><%= @event.description %></p>
+    <p><b>Place: </b><%= @event.place %></p>
+    <p><b>Date: </b><%= @event.date %></p>
+    <p><b>Time: </b><%= @event.time %></p>
     <p>
       <%= link_to 'Edit', edit_event_path(@event) %> |
       <%= link_to 'Destroy', @event, data: { confirm: 'Are you sure?' }, method: :delete %> |

@@ -1,42 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<div class="image">
-<style> 
-    .image { 
-   position: relative; 
-   width: 100%; /* for IE 6 */
-   padding-top: 0px
-}
+<div class="page-header">
+<h1 id="timeline">Upcoming Events</h1>
+<p>To see our full calendar of campus recruiting events and application deadlines check out our Calendar</p>
+<a href="/static_pages/calendar">Go to Calendar</a>
 
-h2 { 
-   position: absolute; 
-   top: 100px; 
-   left: 0; 
-   width: 100%;
-   color: #fff 
-}
-
-</style>
-    <img src="Lon.jpg" alt="London", width="100%">
-    <h2>Careers made simple
-    <p>Meet recruiters - Prep for interview - Apply online</P>
-    <a href="/users/sign_up" class="btn btn-lg btn-primary">Sign up now!</a>
-    </h2>
-  </div>
 </div>
 
+<table class= "table table-responsive">
+<thead>
 
-<div class="container-fluid bg-3 text-center">
-  <h3>Companies</h3><br>
-    </div>
-  
-   <% @events.in_groups_of(4) do |group| %>
-     <div class="row">
-    <% group.compact.each do |event| %>
-      <div class="col-md-4">
-        <h4><%= link_to event.company, event %></h4>
-        <%= image_tag event.picture_url, width: '100%' if event.picture.present?%>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+<tr>
+<th>Picture</th>
+<th>Company</th>
+<th>Industry</th>
+<th>University</th>
+<th>Name</th>
+<th>Date</th>
+</tr>
+</thead>
+
+<tbody>
+<% @events.each do |event| %>
+<tr>
+  <td><%= image_tag event.picture_url, width:'200px', class: "img-thumbnail" if event.picture.present?%> 
+  <td><%= event.company %></td>
+  <td><%= event.industry %></td>
+  <td><%= event.university %></td>
+  <td><%= event.name %></td>
+  <td><%= event.date %></td>
+  <td><%= link_to 'Show', event %></td>
+  </tr>
+  <% end %>
+  </tbody>
+  </table>
+
+<br>
+
+<%= link_to 'New University', new_university_path %>

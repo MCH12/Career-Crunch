@@ -1,35 +1,40 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <title>Career Crunch</title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+<title>Career Crunch</title>
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
 <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<div class="container">
 
 <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Career Crunch</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Events</a></li>
-        <li><a href="/prep">Prep</a></li>
-        <li><a href="/apply">Apply</a></li>
-        <li><a href="/about">Team</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-      <p class="navbar-text pull-right">
+ <div class="container-fluid">
+ <div class="navbar-header">
+ <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ </button>
+ 
+ <a class="navbar-brand" href="/static_pages/home">Career Crunch</a>
+ </div>
+ <div class="collapse navbar-collapse" id="myNavbar">
+ <ul class="nav navbar-nav">
+ <li class="active"><a href="/static_pages/home">About</a></li>
+ <li><a href="/events">Events</a></li>
+ <li><a href="/static_pages/prep">Prep</a></li>
+ <li><a href="/apply">Apply</a></li>
+ <li><a href="/static_pages/calendar">Calendar</a></li>
+ <li><a href="/contact">Contact</a></li>
+ </ul>
+ <p class="navbar-text pull-right">
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>.
   <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
@@ -38,15 +43,12 @@
   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
-
-    </div>
   </div>
-</nav>
-
-</head>
+  </div>
+  </nav>
+  </head>
 
 <body>
-
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
@@ -58,11 +60,10 @@
   <%= yield %>
 </div>
 
-<footer class="container-fluid text-center">
+<footer class="container-fluid text-centre">
   <p>Career Crunch 2016</p>
 </footer>
+</body>
 
-</body>
-</html>
-</body>
+</div>
 </html>

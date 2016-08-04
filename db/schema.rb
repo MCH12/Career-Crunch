@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160801084620) do
+ActiveRecord::Schema.define(version: 20160804060226) do
+
+  create_table "applications", force: :cascade do |t|
+    t.string   "type"
+    t.string   "company"
+    t.string   "industry"
+    t.text     "process"
+    t.date     "apply_by"
+    t.string   "interviews"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.string   "name"
+    t.string   "industry"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.text     "description"
+    t.integer  "company_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.string   "picture"
@@ -24,6 +44,15 @@ ActiveRecord::Schema.define(version: 20160801084620) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "name"
+    t.string   "industry"
+    t.integer  "event_id"
+  end
+
+  create_table "universities", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "uni_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,6 +78,7 @@ ActiveRecord::Schema.define(version: 20160801084620) do
     t.text     "work_ex"
     t.string   "gender"
     t.string   "ethnic"
+    t.integer  "user_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

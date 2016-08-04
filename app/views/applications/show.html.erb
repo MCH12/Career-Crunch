@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @application.type %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @application.company %>
+</p>
+
+<p>
+  <strong>Industry:</strong>
+  <%= @application.industry %>
+</p>
+
+<p>
+  <strong>Process:</strong>
+  <%= @application.process %>
+</p>
+
+<p>
+  <strong>Apply by:</strong>
+  <%= @application.apply_by %>
+</p>
+
+<p>
+  <strong>Interviews:</strong>
+  <%= @application.interviews %>
+</p>
+
+<%= link_to 'Edit', edit_application_path(@application) %> |
+<%= link_to 'Back', applications_path %>
