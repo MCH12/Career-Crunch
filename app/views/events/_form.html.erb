@@ -19,7 +19,7 @@
   <div class="field form-group">
      <label><%= f.label :company, class: 'col-sm-2 control-label' %></label>
   <div class="col sm-6">
-    <%= f.text_field :company, class: 'form-control' %>
+    <%= f.collection_select :company, Company.all, :company_id, :name,  class: 'form-control' %>
   </div>
 
     <div class="field form-group">
@@ -32,7 +32,7 @@
   <div class="field form-group">
     <label><%= f.label :university, class: 'col-sm-2 control-label' %></label>
   <div class="col sm-6">
-    <%= f.text_field :university, class: 'form-control' %>
+    <%= f.collection_select :university, University.all, :uni_id, :name, class: 'form-control' %>
   </div>
 
   <div class="field form-group">
