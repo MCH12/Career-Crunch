@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160806172751) do
+ActiveRecord::Schema.define(version: 20160806203007) do
 
   create_table "applications", force: :cascade do |t|
     t.string   "type"
@@ -69,7 +69,6 @@ ActiveRecord::Schema.define(version: 20160806172751) do
     t.datetime "updated_at",                          null: false
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "university"
     t.integer  "grad_year"
     t.string   "subject"
     t.string   "results"
@@ -77,7 +76,7 @@ ActiveRecord::Schema.define(version: 20160806172751) do
     t.text     "work_ex"
     t.string   "gender"
     t.string   "ethnic"
-    t.integer  "user_id"
+    t.integer  "university_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

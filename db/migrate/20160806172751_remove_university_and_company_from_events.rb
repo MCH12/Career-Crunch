@@ -3,5 +3,5 @@ class RemoveUniversityAndCompanyFromEvents < ActiveRecord::Migration
     remove_column :events, :company, :string
     remove_column :events, :university, :string
     remove_column :events, :event_id, :integer
-  end
+   end
 end
