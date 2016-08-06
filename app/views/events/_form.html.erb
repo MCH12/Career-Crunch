@@ -19,7 +19,7 @@
   <div class="field form-group">
      <label><%= f.label :company, class: 'col-sm-2 control-label' %></label>
   <div class="col sm-6">
-    <%= f.collection_select :company, Company.all, :company_id, :name,  class: 'form-control' %>
+    <%= f.collection_select :company_id, Company.all, :id, :name,  class: 'form-control' %>
   </div>
 
     <div class="field form-group">
@@ -32,7 +32,7 @@
   <div class="field form-group">
     <label><%= f.label :university, class: 'col-sm-2 control-label' %></label>
   <div class="col sm-6">
-    <%= f.collection_select :university, University.all, :uni_id, :name, class: 'form-control' %>
+    <%= f.collection_select :university_id, University.all, :id, :name, class: 'form-control' %>
   </div>
 
   <div class="field form-group">
@@ -46,22 +46,22 @@
   <div class="col sm-6">
     <%= f.text_area :description, class: 'form-control' %>
   </div>
-  
+
  <div class="field form-group">
     <label><%= f.label :place, class: 'col-sm-2 control-label' %></label>
   <div class="col sm-6">
     <%= f.text_field :place, class: 'form-control' %>
   </div>
-  
+
   <div class="field form-group">
     <label><%= f.label :date, class: 'col-sm-2 control-label' %></label>
       <%= f.date_select :date, class: 'form-control' %>
   </div>
-   
+
   <div class="field form-group">
     <label><%= f.label :time, class: 'col-sm-2 control-label' %></label>
     <%= f.time_select :time, class: 'form-control' %>
-  
+
   </div>
 
   <div class="actions">
