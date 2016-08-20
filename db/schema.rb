@@ -13,18 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160806203007) do
 
-  create_table "applications", force: :cascade do |t|
-    t.string   "type"
-    t.string   "company"
-    t.string   "industry"
-    t.text     "process"
-    t.date     "apply_by"
-    t.string   "interviews"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "company_id"
-  end
-
   create_table "companies", force: :cascade do |t|
     t.string   "name"
     t.string   "industry"
