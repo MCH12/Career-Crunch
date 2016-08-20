@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160805165005) do
+ActiveRecord::Schema.define(version: 20160806203007) do
 
   create_table "applications", force: :cascade do |t|
     t.string   "type"
@@ -36,19 +36,16 @@ ActiveRecord::Schema.define(version: 20160805165005) do
 
   create_table "events", force: :cascade do |t|
     t.string   "picture"
-    t.string   "company"
-    t.string   "university"
     t.text     "description"
     t.string   "place"
     t.date     "date"
     t.time     "time"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.string   "name"
     t.string   "industry"
-    t.integer  "event_id"
+    t.integer  "university_id"
     t.integer  "company_id"
-    t.integer  "uni_id"
   end
 
   create_table "universities", force: :cascade do |t|
@@ -73,7 +70,6 @@ ActiveRecord::Schema.define(version: 20160805165005) do
     t.datetime "updated_at",                          null: false
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "university"
     t.integer  "grad_year"
     t.string   "subject"
     t.string   "results"
@@ -81,7 +77,7 @@ ActiveRecord::Schema.define(version: 20160805165005) do
     t.text     "work_ex"
     t.string   "gender"
     t.string   "ethnic"
-    t.integer  "user_id"
+    t.integer  "university_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

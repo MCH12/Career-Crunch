@@ -23,10 +23,10 @@
 <tbody>
 <% @events.each do |event| %>
 <tr>
-  <td><%= image_tag event.picture_url, width:'200px', class: "img-thumbnail" if event.picture.present?%> 
-  <td><%= event.company %></td>
+  <td><%= image_tag event.picture_url, width:'200px', class: "img-thumbnail" if event.picture.present?%>
+  <td><%= event.company.name %></td>
   <td><%= event.industry %></td>
-  <td><%= event.university %></td>
+  <td><%= event.university.name %></td>
   <td><%= event.name %></td>
   <td><%= event.date %></td>
   <td><%= link_to 'Show', event %></td>
