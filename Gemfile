@@ -14,6 +14,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
 gem 'carrierwave'
 gem 'bootstrap-sass', '~> 3.2.0'
+gem 'compass-rails'
 gem 'autoprefixer-rails'
 gem "simple_form"
 # See https://github.com/rails/execjs#readme for more supported runtimes

@@ -1,0 +1,56 @@
+@import "jednotka/bootstrap/bootstrap.min";
+
+@import "jednotka/jednotka_mint";
+//customize contrast color
+//$contrast: #01a9e0;
+//@import "jednotka/jednotka";
+
+.hero-carousel {
+    background: url(asset_path('London.jpg')) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+a.navbar-brand.brand-logo {
+    img {
+        width: 250px;
+    }
+}
+
+#header .navbar-default.navbar-collapsed-sm {
+    background-color: white;
+}
+
+#header .navbar-default.navbar-collapsed-sm .navbar-nav > li > a span {
+    color: #1A8078;
+    text-shadow: none;
+    &:hover {
+        color: #1A8078;
+        text-shadow: none;
+    }
+}
+
+#header .navbar-default.navbar-collapsed-sm .navbar-nav > li > a:hover span {
+    color: #1A8078;
+}
+
+#header .navbar-default.navbar-collapsed-sm .navbar-nav > li > a:hover {
+    background-color: white;
+}
+
+default.navbar-collapsed-sm .navbar-nav > li > a:focus span {
+    color: #1A8078;
+}
+
+.hero-carousel .slides {
+    margin-top: 91px;
+}
+
+.logo-container {
+    width: 200px;
+    img {
+        width: 100%;
+    }
+}

@@ -2,69 +2,178 @@
 
 <html lang="en">
 <head>
-<title>Career Crunch</title>
-<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-<%= csrf_meta_tags %>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <title>Career Crunch</title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+</head>
 
-<div class="container">
+<body class='homepage'>
+    <div id='wrapper'>
+        <header id='header'>
+            <nav class='navbar navbar-collapsed-sm navbar-fixed-top navbar-default' id='nav' role='navigation'>
+                <div class="container">
+                    <div class='navbar-header'>
+                        <button class='navbar-toggle' data-target='.navbar-header-collapse' data-toggle='collapse' type='button'>
+                            <span class='sr-only'>Toggle navigation</span>
+                            <span class='icon-bar'></span>
+                            <span class='icon-bar'></span>
+                            <span class='icon-bar'></span>
+                        </button>
+                        <a class='navbar-brand brand-logo' href='/'>
+                            <%= image_tag('cc_logo.png') %>
+                        </a>
+                    </div>
+                    <div class='collapse navbar-collapse navbar-header-collapse'>
+                        <ul class='nav navbar-nav navbar-right'>
+                            <li><a href="/static_pages/home"><span>About</span></a></li>
+                            <li><a href="/companies"><span>Companies</span></a></li>
+                            <li><a href="/events"><span>Events</span></a></li>
+                            <li><a href="/static_pages/prep"><span>Prep</span></a></li>
+                            <li><a href="/static_pages/calendar"><span>Calendar</span></a></li>
+                            <li><a href="/contact"><span>Contact</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
 
-<nav class="navbar navbar-default">
- <div class="container-fluid">
- <div class="navbar-header">
- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
- <span class="icon-bar"></span>
- <span class="icon-bar"></span>
- <span class="icon-bar"></span>
- </button>
- 
- <a class="navbar-brand"><img src="/cc_logo" alt="CC">
- </div>
- <div class="collapse navbar-collapse" id="myNavbar">
- <ul class="nav navbar-nav">
- <li><a href="/static_pages/home">About</a></li>
- <li><a href="/companies">Companies</a></li>
- <li><a href="/events">Events</a></li>
- <li><a href="/static_pages/prep">Prep</a></li>
- <li><a href="/applications">Apply</a></li>
- <li><a href="/static_pages/calendar">Calendar</a></li>
- <li><a href="/contact">Contact</a></li>
- </ul>
- <p class="navbar-text pull-right">
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
-  </div>
-  </div>
-  </nav>
-  </head>
+        <% if notice %>
+            <p class="alert alert-success"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+            <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
+        <div id="main" role="main">
+            <%= yield %>
+        </div>
 
-<body>
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
-
-<div class="container">
-  <%= yield %>
-</div>
-
-<footer class="container-fluid text-centre">
-  <p>Career Crunch 2016</p>
-</footer>
+        <footer id='footer'>
+            <div id='footer-main'>
+                <div class='container'>
+                    <div class='row'>
+                        <div class='col-md-3 col-sm-6 info-box'>
+                            <div class='logo-container'>
+                                <%= image_tag "cc_logo.png"%>
+                            </div>
+                            <p class='no-mg-b'>Integer vulputate porta augue, sit amet interdum tellus commodo et. Sed volutpat neque vel turpis ultrices sini bibendum. Aliquam quis malesuada.</p>
+                        </div>
+                        <div class='col-md-3 col-sm-6 info-box'>
+                            <h2 class='title'>Contact</h2>
+                            <div class='icon-boxes'>
+                                <div class='icon-box'>
+                                    <div class='icon icon-wrap'>
+                                        <i class='fa fa-map-marker'></i>
+                                    </div>
+                                    <div class='content'>
+                                        4567 Street name,
+                                        <br>
+                                        012 12 City name, Country
+                                    </div>
+                                </div>
+                                <div class='icon-box'>
+                                    <div class='icon icon-wrap'>
+                                        <i class='fa fa-phone'></i>
+                                    </div>
+                                    <div class='content'>
+                                        <a href='tel:+012345678'>+012 345 678</a>
+                                    </div>
+                                </div>
+                                <div class='icon-box'>
+                                    <div class='icon icon-wrap'>
+                                        <i class='fa fa-envelope'></i>
+                                    </div>
+                                    <div class='content'><a href="mailto:info@bublinastudio.com">info@bublinastudio.com</a></div>
+                                </div>
+                                <div class='icon-box'>
+                                    <div class='icon icon-wrap'>
+                                        <i class='fa fa-globe'></i>
+                                    </div>
+                                    <div class='content'><a href="#">www.bublinastudio.com</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='col-md-3 col-sm-6 info-box social-box'>
+                            <h2 class='title'>Latest tweets</h2>
+                            <div class='icon-boxes'>
+                                <div class='icon-box'>
+                                    <div class='icon icon-wrap'>
+                                        <i class='fa fa-twitter text-contrast'></i>
+                                    </div>
+                                    <div class='content'>
+                                        <p>
+                                            Phasellus vulputate lobortis sem. Mauris id velit in urna.
+                                            <br>
+                                            <a class='time' href='#'>
+                                                <i>1 hour ago</i>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class='icon-box'>
+                                    <div class='icon icon-wrap'>
+                                        <i class='fa fa-twitter text-contrast'></i>
+                                    </div>
+                                    <div class='content'>
+                                        <p>
+                                            Etiam luctus, dui congue tempus blandit, dui.
+                                            <br>
+                                            <a class='time' href='#'>
+                                                <i>3 hours ago</i>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='col-md-3 col-sm-6 info-box'>
+                            <h2 class='title'>Newsletter</h2>
+                            <p>Proin condimentum, nisi vel vestibulum ultricies, nunc elit.</p>
+                            <form action='index.html' class='form-inline form-validation' method='get'>
+                                <div class='row'>
+                                    <div class='form-group control-group col-xs-9 col-md-8 col-lg-9'>
+                                        <input class='form-control' data-rule-email='true' data-rule-required='true' id='newsletter_email' name='newsletter[email]' placeholder='Email address' type='email'>
+                                    </div>
+                                    <div class='col-xs-3 col-md-4 col-lg-3'>
+                                        <button class='btn btn-medium-light btn-block' type='submit'>
+                                            <i class='fa fa-reply text-white'></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id='footer-copyright'>
+                <div class='container'>
+                    <div class='row'>
+                        <div class='col-lg-12 clearfix'>
+                            <p class='copyright'>
+                                Copyright
+                                &copy;
+                                2013 Jednotka
+                            </p>
+                            <div class='links'>
+                                <a class='btn btn-circle btn-medium-light btn-sm' href='#'>
+                                    <i class='fa fa-twitter text-dark'></i>
+                                </a>
+                                <a class='btn btn-circle btn-medium-light btn-sm' href='#'>
+                                    <i class='fa fa-dribbble text-dark'></i>
+                                </a>
+                                <a class='btn btn-circle btn-medium-light btn-sm' href='#'>
+                                    <i class='fa fa-facebook text-dark'></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
-
-</div>
 </html>
