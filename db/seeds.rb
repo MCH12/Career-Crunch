@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+#
 
 universities = University.create(
     [
@@ -20,17 +21,30 @@ universities = University.create(
     ]
 )
 
+industries = Industry.create(
+    [
+        {
+            name: "Consulting"
+        },
+        {
+            name: "Software"
+        }
+    ]
+)
+
 companies = Company.create(
     [
         {
             name: "McKinsey",
-            industry: "BS",
-            description: "The Best"
+            industry: Industry.first,
+            description: "The Best",
+            logo: File.new(File.join(Rails.root,'app/assets/images/companies/mckinsey-and-co.jpg'))
         },
         {
             name: "BCG",
-            industry: "BS",
-            description: "Better than the Best"
+            industry: Industry.first,
+            description: "Better than the Best",
+            logo: File.new(File.join(Rails.root,'app/assets/images/companies/bcg.jpg'))
         }
     ]
 )

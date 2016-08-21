@@ -1,19 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div id="main-content">
+    <div class="container">
+        <p>
+            <%= image_tag(@company.logo.url(:large)) %>
+        </p>
+        <p>
+          <strong>Name:</strong>
+          <%= @company.name %>
+        </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @company.name %>
-</p>
+        <p>
+          <strong>Industry:</strong>
+          <%= @company.industry.name %>
+        </p>
 
-<p>
-  <strong>Industry:</strong>
-  <%= @company.industry %>
-</p>
+        <p>
+          <strong>Description:</strong>
+          <%= @company.description %>
+        </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @company.description %>
-</p>
-
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
+        <%= link_to 'Edit', edit_company_path(@company) %> |
+        <%= link_to 'Back', companies_path %>
+    </div>
+</div>

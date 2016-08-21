@@ -11,15 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160806203007) do
+ActiveRecord::Schema.define(version: 20160821110336) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
-    t.string   "industry"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.text     "description"
     t.integer  "company_id"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+    t.integer  "industry_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -34,6 +38,12 @@ ActiveRecord::Schema.define(version: 20160806203007) do
     t.string   "industry"
     t.integer  "university_id"
     t.integer  "company_id"
+  end
+
+  create_table "industries", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "universities", force: :cascade do |t|

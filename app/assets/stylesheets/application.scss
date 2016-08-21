@@ -40,7 +40,15 @@ a.navbar-brand.brand-logo {
     background-color: white;
 }
 
-default.navbar-collapsed-sm .navbar-nav > li > a:focus span {
+#main {
+    background-color: white;
+}
+
+#main-content {
+    margin-top: 45px;
+}
+
+.default .navbar-collapsed-sm .navbar-nav > li > a:focus span {
     color: #1A8078;
 }
 
