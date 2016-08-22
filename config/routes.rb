@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'static_pages/help'
   get 'static_pages/calendar'
   get 'static_pages/prep'
+  get 'static_pages/signup'
 
   resources :universities
   resources :applications

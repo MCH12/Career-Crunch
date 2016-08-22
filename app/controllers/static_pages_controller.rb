@@ -5,6 +5,9 @@ class StaticPagesController < ApplicationController
   def help
   end
 
+  def signup
+  end
+
   def calendar
   end
 
